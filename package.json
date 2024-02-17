@@ -1,0 +1,12 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "API Rest",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "",
+  "license": "ISC"
+}

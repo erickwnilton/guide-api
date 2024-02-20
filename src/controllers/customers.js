@@ -1,8 +1,12 @@
-export function getCustomers() {
+import { Customers } from "../models/customers.js";
 
+export function getCustomers(req, res) {
+  return Customers.findAll().then((result) => {
+    res.status(200).json(result)
+  })
 }
 
-export function addCustomer() {
+export function addCustomer(req, res) {
 
 }
 

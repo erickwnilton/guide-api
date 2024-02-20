@@ -16,6 +16,7 @@ export async function addCustomer(req, res) {
     })
 
       .then((result) => { res.status(201).json(result) })
+
   } catch (error) {
     return res.status(500).json({
       message: "error when creating customer"
@@ -56,6 +57,31 @@ export async function putCustomer(req, res) {
   }
 }
 
-export function deleteCustomer() {
+export async function deleteCustomer(req, res) {
+  try {
+    const customer = await Customers.findByPk(req.params.id);
 
+    if (customer) {
+      await Customers.destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+
+      return Customers.findAll((result) => {
+        res.status(200).json(result)
+      })
+    }
+
+    else {
+      return res.status(404).json({
+        message: "customer not found"
+      })
+    }
+
+  } catch (error) {
+    return res.status(500).json({
+      message: "error when deleted product"
+    })
+  }
 }

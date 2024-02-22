@@ -35,8 +35,6 @@ npm start
 npm run test
 ```
 
-5. Run individual test:
-
 ### File structure
 
 ```
@@ -48,6 +46,7 @@ npm run test
 |-- models
 |-- routes
 ` app.js
+` config.js
 ` index.js
 ```
 

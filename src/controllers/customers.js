@@ -1,9 +1,8 @@
 import { Customers } from "../models/customers.js";
 
-export function getCustomers(req, res) {
-  return Customers.findAll().then((result) => {
-    res.status(200).json(result)
-  })
+export async function getCustomers(req, res) {
+  const result = await Customers.findAll();
+  res.status(200).json(result);
 }
 
 export async function addCustomer(req, res) {
